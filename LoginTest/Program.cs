@@ -1,5 +1,4 @@
-﻿
-using Spectre.Console;
+﻿using Spectre.Console;
 
 string fileName1 = @"D:\CSFiles_mf\Username_fake_mf_mf.txt";
 string fileName = @"D:\CSFiles_mf\Password_fake_mf_mf.txt";
@@ -13,6 +12,11 @@ try
         File.Delete(fileName);
     }
 
+    if (File.Exists(fileName1))
+    {
+        File.Delete(fileName1);
+    }
+
     using (StreamWriter sw = File.CreateText(fileName))
     {
         
@@ -23,7 +27,7 @@ try
     {
         password1_real = "";
         password1_real = sr.ReadLine();
-        UserLogin();
+        
     }
 
     using (StreamWriter sw = File.CreateText(fileName1))
@@ -61,11 +65,6 @@ void UserLogin()
 
 
 }
-
-
-
-
-
 
 void LoginMode()
 {
